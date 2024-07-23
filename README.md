@@ -1,7 +1,7 @@
-**Name:** RAJ ARYAN 
-**Company:** CODTECH IT SOLUTIONS 
-**Intern ID:** CT08DS3209 
-**Domain:** C++ PROGRAMMING 
+**Name:** RAJ ARYAN     
+**Company:** CODTECH IT SOLUTIONS     
+**Intern ID:** CT08DS3209      
+**Domain:** C++ PROGRAMMING     
 **Duration:** JUNE 25th,2024 to JULY 25th, 2024
 
 
