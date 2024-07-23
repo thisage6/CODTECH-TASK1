@@ -1,0 +1,100 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int Total = 0; 
+
+class Question {
+private:
+    string Question_Text;
+    string Answer_1;
+    string Answer_2;
+    string Answer_3;
+    string Answer_4;
+    int Correct_Answer;
+    int Question_Score;
+
+public:
+    void setValues(string, string, string, string, string, int, int);
+    void askQuestion();
+};
+
+
+void Question::setValues(string q, string a1, string a2, string a3, string a4, int ca, int pa) {
+    Question_Text = q;
+    Answer_1 = a1;
+    Answer_2 = a2;
+    Answer_3 = a3;
+    Answer_4 = a4;
+    Correct_Answer = ca;
+    Question_Score = pa;
+}
+
+
+void Question::askQuestion() {
+    cout << endl;
+    cout << Question_Text << endl;
+    cout << "1. " << Answer_1 << endl;
+    cout << "2. " << Answer_2 << endl;
+    cout << "3. " << Answer_3 << endl;
+    cout << "4. " << Answer_4 << endl;
+    cout << endl;
+
+    int userAnswer;
+    cout << "What is your answer? (Enter the number): ";
+    cin >> userAnswer;
+
+    if (userAnswer == Correct_Answer) {
+        cout << "Correct! You earned " << Question_Score << " points." << endl;
+        Total += Question_Score;
+    } else {
+        cout << "Oops! That's incorrect." << endl;
+    }
+}
+
+int main() {
+    cout << "\n\n\t\t\tTHE DAILY QUIZ" << endl;
+    cout << "\nPress Enter to start the quiz... ";
+    cin.get();
+
+    string Name;
+    cout << "What is your name? ";
+    cin >> Name;
+
+    cout << "Good luck, " << Name << "!" << endl;
+
+
+    Question q1, q2, q3, q4, q5, q6, q7, q8, q9, q10;
+    q1.setValues("Question 1: What is 5!?", "24", "120", "20", "100", 2, 10);
+    q2.setValues("Question 2: Which planet is closest to the Sun?", "Earth", "Mars", "Venus", "Mercury", 4, 10);
+    q3.setValues("Question 3: What is the capital of France?", "Berlin", "Madrid", "Paris", "Rome", 3, 10);
+    q4.setValues("Question 4: What is the largest lake in the world?", "Caspian Sea", "Baikal", "Lake Superior", "Ontario", 2, 10);
+    q5.setValues("Question 5: What gas is used to extinguish fires?", "Oxygen", "Nitrogen", "Carbon dioxide", "Hydrogen", 3,10);
+    q6.setValues("Question 6: What is the name of the process by which plants convert sunlight into energy?","Photosynthesis", "Respiration", "Respiration", "Evolution",1, 10);
+    q7.setValues("Question 7: Hitler's party is known as:","Democratic Party", "Labour Party", "Nazi Party", "Ku-Klux-Klan",3, 10);
+    q8.setValues("Question 8: What does 'Carpe Diem' mean in Latin?","Enjoy the moment", "Have no fear", "Sorry I blew it", "Hello",1, 10);
+    q9.setValues("Question 9: When the humans use more facial muscles?", "While smiling", "While frowning","While sleeping","While talking",2, 10);
+    q10.setValues("Question 10: In which country did the Chernobyl nuclear disaster take place?","Russia","Ukraine","Belarus","Lithuania",2, 10);
+
+
+    q1.askQuestion();
+    q2.askQuestion();
+    q3.askQuestion();
+    q4.askQuestion();
+    q5.askQuestion();
+    q6.askQuestion();
+    q7.askQuestion();
+    q8.askQuestion();
+    q9.askQuestion();
+    q10.askQuestion();
+
+    cout << "Total Score = " << Total << " out of 100" << endl;
+
+    if (Total >= 50) {
+        cout << "Congratulations! You passed the quiz!" << endl;
+    } else {
+        cout << "Better luck next time!" << endl;
+    }
+
+    return 0;
+}
